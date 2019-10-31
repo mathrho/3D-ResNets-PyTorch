@@ -16,13 +16,14 @@ def class_process(dir_path, dst_dir_path, class_name):
     #if '.mp4' not in file_name:
     #  continue
     name, ext = os.path.splitext(file_name)
+    name = name.split('.')[0]
     dst_directory_path = os.path.join(dst_class_path, name)
 
-    if len(name.split('.')) > 1:
-      dst_directory_new_path = os.path.join(dst_class_path, name.split('.')[0])
-      subprocess.call('mv \"{}\" \"{}\"'.format(dst_directory_path, dst_directory_new_path), shell=True)
-      print('rename {}'.format(dst_directory_path))
-    continue 
+    #if len(name.split('.')) > 1:
+    #  dst_directory_new_path = os.path.join(dst_class_path, name.split('.')[0])
+    #  subprocess.call('mv \"{}\" \"{}\"'.format(dst_directory_path, dst_directory_new_path), shell=True)
+    #  print('rename {}'.format(dst_directory_path))
+    #continue 
 
     video_file_path = os.path.join(class_path, file_name)
     try:
