@@ -40,7 +40,7 @@ def class_process(dir_path, dst_dir_path, class_name):
       print(dst_directory_path)
       continue
     #cmd = 'ffmpeg -i \"{}\" -vf scale=-1:256 \"{}/image_%05d.jpg\"'.format(video_file_path, dst_directory_path)
-    cmd = 'ffmpeg -i \"{}\" \"{}/image_%05d.jpg\"'.format(video_file_path, dst_directory_path)
+    cmd = 'ffmpeg -i \"{}\" -threads 1 -q:v 0 \"{}/img_%05d.jpg\"'.format(video_file_path, dst_directory_path)
     #cmd = 'ffmpeg -i \"{}\" -q:v 1 \"{}/image_%05d.jpg\"'.format(video_file_path, dst_directory_path)
     #cmd = 'ffmpeg -i \"{}\" -qmin 1 -qmax 1 -q:v 1 \"{}/image_%05d.jpg\"'.format(video_file_path, dst_directory_path)
     print(cmd)
